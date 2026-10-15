@@ -1,3 +1,5 @@
-from django.urls import path
+from django.urls import include, path  # MODIFIÉ
 
-urlpatterns = []
+urlpatterns = [
+    path("", include("vitrine.urls")),  # AJOUT
+]
