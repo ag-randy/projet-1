@@ -26,7 +26,7 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],  # AJOUT # dans TEMPLATES, remplace "DIRS": [] par :
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -47,3 +47,6 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = "static/"
+
+# en bas du fichier, après STATIC_URL :
+STATICFILES_DIRS = [BASE_DIR / "static"]
