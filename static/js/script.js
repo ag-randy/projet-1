@@ -121,3 +121,14 @@ document.querySelectorAll("a").forEach(link => {
         }, 300);
     });
 });
+
+window.addEventListener("pageshow", () => {
+    // Remet la page visible (retour arrière)
+    document.body.style.opacity = "1";
+
+    // Referme le menu mobile s'il est resté ouvert
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+    if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+        bootstrap.Collapse.getOrCreateInstance(navbarCollapse, { toggle: false }).hide();
+    }
+});
