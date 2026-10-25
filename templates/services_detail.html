@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}{{ service.titre }} - Digicel{% endblock %}
+{% block contenu %}
+    <section class="py-5 hero-animate">
+        <div class="container">
+            <a href="{% url 'services' %}" class="btn btn-secondary hero-animate">Retour aux services</a>
+
+            <h2 class="fw-bold text-primary mt-3 mb-4">{{ service.titre }}</h2>
+            <p class="text-secondary lead">{{ service.resume }}</p>
+            <p class="text-secondary">{{ service.description }}</p>
+
+            <a href="{% url 'contact' %}" class="btn btn-primary btn-lg mt-3 hero-animate">Contactez-nous</a>
+        </div>
+    </section>
+{% endblock %}

@@ -12,73 +12,17 @@
             </div>
 
             <div class="row g-4">
-
-                <!-- 1 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 p-3 text-center">
-                        <h5 class="fw-bold text-primary">Téléphonie mobile</h5>
-                        <p class="text-secondary">Restez connecté partout avec une couverture fiable et des forfaits adaptés.</p>
+                {% for service in services %}
+                    <div class="col-md-6 col-lg-3">
+                        <a href="{% url 'service_detail' service.slug %}" class="text-decoration-none">
+                            <div class="card h-100 p-3 text-center">
+                                <h5 class="fw-bold text-primary">{{ service.titre }}</h5>
+                                <p class="text-secondary">{{ service.resume }}</p>
+                            </div>
+                        </a>
                     </div>
-                </div>
-
-                <!-- 2 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 p-3 text-center">
-                        <h5 class="fw-bold text-primary">Internet 4G / 5G</h5>
-                        <p class="text-secondary">Une connexion rapide pour naviguer, travailler et se divertir sans limites.</p>
-                    </div>
-                </div>
-
-                <!-- 3 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 p-3 text-center">
-                        <h5 class="fw-bold text-primary">Fibre optique</h5>
-                        <p class="text-secondary">Internet ultra rapide et stable pour la maison et les entreprises.</p>
-                    </div>
-                </div>
-
-                <!-- 4 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 p-3 text-center">
-                        <h5 class="fw-bold text-primary">Digicel Wallet</h5>
-                        <p class="text-secondary">Envoyez et recevez de l'argent facilement, sans compte bancaire.</p>
-                    </div>
-                </div>
-
-                <!-- 5 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 p-3 text-center">
-                        <h5 class="fw-bold text-primary">Télévision</h5>
-                        <p class="text-secondary">Profitez de vos programmes, films et contenus préférés en toute simplicité.</p>
-                    </div>
-                </div>
-
-                <!-- 6 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 p-3 text-center">
-                        <h5 class="fw-bold text-primary">Solutions Business</h5>
-                        <p class="text-secondary">Des outils et services pour accompagner la croissance de votre entreprise.</p>
-                    </div>
-                </div>
-
-                <!-- 7 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 p-3 text-center">
-                        <h5 class="fw-bold text-primary">Fondation Digicel</h5>
-                        <p class="text-secondary">Nous soutenons l’éducation et les communautés à travers tout le pays.</p>
-                    </div>
-                </div>
-
-                <!-- 8 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 p-3 text-center">
-                        <h5 class="fw-bold text-primary">Sponsoring & événements</h5>
-                        <p class="text-secondary">Nous valorisons les talents à travers le sport et la culture haïtienne.</p>
-                    </div>
-                </div>
-
+                {% endfor %}
             </div>
-        </div>
     </section>
 
 
