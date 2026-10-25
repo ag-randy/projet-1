@@ -8,7 +8,10 @@ const currentPath = window.location.pathname;
 
 document.querySelectorAll(".nav-link").forEach(link => {
     const href = link.getAttribute("href");
-    link.classList.toggle("active", href === currentPath);
+    const actif = href === "/"
+        ? currentPath === "/"
+        : currentPath.startsWith(href);
+    link.classList.toggle("active", actif);
 });
 
 /////////////////////////////////////////////////////
@@ -122,13 +125,29 @@ document.querySelectorAll("a").forEach(link => {
     });
 });
 
-window.addEventListener("pageshow", () => {
-    // Remet la page visible (retour arrière)
-    document.body.style.opacity = "1";
-
+window.addEventListener("pageshow", (event) => {
     // Referme le menu mobile s'il est resté ouvert
     const navbarCollapse = document.querySelector(".navbar-collapse");
     if (navbarCollapse && navbarCollapse.classList.contains("show")) {
         bootstrap.Collapse.getOrCreateInstance(navbarCollapse, { toggle: false }).hide();
+    }
+
+    if (event.persisted) {
+        // reset the hero items without animating the reset
+        const items = document.querySelectorAll(".hero-animate");
+        items.forEach(el => { el.style.transition = "none"; el.classList.remove("show"); });
+
+        // reset the body, then force the browser to apply it
+        document.body.style.transition = "none";
+        document.body.style.opacity = "0";
+        void document.body.offsetHeight;
+
+        // play the entrance animation again
+        items.forEach(el => { el.style.transition = ""; });
+        document.body.style.transition = "opacity 0.4s ease";
+        document.body.style.opacity = "1";
+        initHeroAnimations();
+    } else {
+        document.body.style.opacity = "1";
     }
 });

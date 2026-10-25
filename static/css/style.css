@@ -272,3 +272,9 @@ body {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+.btn.btn-secondary,
+a.btn.btn-secondary {
+    transition: background-color 0.8s ease, border-color 0.8s ease, color 0.8s ease,
+                transform 0.8s ease, box-shadow 0.8s ease, opacity 0.8s ease;
+}
