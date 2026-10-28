@@ -9,7 +9,7 @@ En utilisant Django, on l'a transformer en un app qui mpermet d'afficher des inf
 ![Acceuil](static/img/Screenshot%201.png)
 ![A Propos](static/img/Screenshot%202.png)
 ![Services](static/img/Screenshot%203.png)
-![Détail des Services](static/img/Screenshot%203.png)
+![Détail des Services](static/img/Screenshot%206.png)
 ![Projets](static/img/Screenshot%204.png)
 ![Contact](static/img/Screenshot%205.png)
 
@@ -33,15 +33,48 @@ En utilisant Django, on l'a transformer en un app qui mpermet d'afficher des inf
 - Pages générées depuis une liste de données Python pour afficher les services offerts par l'entreprise
 - Page d'erreur 404 si le service n'existe pas
 
+## Lancer le projet en local
+1. Cloner le dépôt GitHub
 
-## Lancer en local
-1. Aller sur le lien https://github.com/ag-randy/projet-1.git
-2. Cloner le repo 
-3. Créer l'environnement virtuel `python -m venv .venv` (ou n'importe quel nom vous voulez nommer l'environnement à la place de env)
-3. L'activer: `.venv\Scripts\Activate` pour Git Bash ou `.venv\Scripts\Activate` pour PowerShell 
-4. Installer les dépendances depuis `requirements.txt`
-5. Lancer le serveur: `python manage.py run server`
-6. Ouvre l'addresse http://... dans votre navigateur
+   ```bash
+   git clone https://github.com/ag-randy/projet-1.git
+   cd projet-1
+   ```
+
+2. Créer l'environnement virtuel
+
+   ```bash
+   python -m venv .venv
+   ```
+
+3. Activer l'environnement virtuel
+
+   - Git Bash :
+     ```bash
+     source .venv/Scripts/activate
+     ```
+
+   - PowerShell :
+     ```powershell
+     .venv\Scripts\Activate.ps1
+     ```
+
+4. Installer les dépendances
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+
+5. Lancer le serveur Django
+
+   ```bash
+   python manage.py runserver
+   ```
+
+6. Ouvrir le site dans un navigateur
+
+   Accéder à http://127.0.0.1:8000/
 
 ## Structure
 ```

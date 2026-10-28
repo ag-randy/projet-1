@@ -1,5 +1,5 @@
-from django.urls import include, path  # MODIFIÉ
+from django.urls import include, path 
 
 urlpatterns = [
-    path("", include("vitrine.urls")),  # AJOUT
+    path("", include("vitrine.urls")), 
 ]

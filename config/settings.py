@@ -11,7 +11,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "django.contrib.staticfiles",
-    "vitrine",  # AJOUT
+    "vitrine",
 ]
 
 MIDDLEWARE = [
